@@ -1,9 +1,9 @@
 # 实时风格转化
 ## 效果预览
-![alt text](<./docs/origin.png>)
-![alt text](<./docs/starrynight.png>)
-![alt text](<./docs/ndnie.png>)
-![alt text](<./docs/shennaichuan.png>)  
+![alt text](<./docs/origin.jpg>)
+![alt text](<./docs/starrynight.jpg>)
+![alt text](<./docs/ndnie.jpg>)
+![alt text](<./docs/shennaichuan.jpg>)  
 
 图片来源是[视频](https://pixabay.com/videos/wave-rays-intro-colorful-particles-217488/?utm_source=chatgpt.com)第一帧。这三个风格图片分别是starrynight, ndnie, 神奈川沖浪裏。
 ## 环境配置
