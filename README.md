@@ -5,7 +5,7 @@
 ![alt text](<./docs/ndnie.jpg>)
 ![alt text](<./docs/shennaichuan.jpg>)  
 
-图片来源是[视频](https://pixabay.com/videos/wave-rays-intro-colorful-particles-217488/?utm_source=chatgpt.com)第一帧。这三个风格图片分别是starrynight, ndnie, 神奈川沖浪裏。
+图片来源是[视频](https://www.pexels.com/zh-cn/video/31618408/)第一帧。这三个风格图片分别是starrynight, ndnie, 神奈川沖浪裏。
 ## 环境配置
 根据configs/cv.yml配置环境
 ```bash
