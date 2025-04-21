@@ -2,10 +2,10 @@
 ## 效果预览
 ![alt text](<./docs/origin.jpg>)
 ![alt text](<./docs/starrynight.jpg>)
-![alt text](<./docs/ndnie.jpg>)
+![alt text](<./docs/udnie.jpg>)
 ![alt text](<./docs/shennaichuan.jpg>)  
 
-图片来源是[视频](https://www.pexels.com/zh-cn/video/31618408/)第一帧。这三个风格图片分别是starrynight, ndnie, 神奈川沖浪裏。
+图片来源是[视频](https://www.pexels.com/zh-cn/video/31618408/)第一帧。这三个风格图片分别是starrynight, udnie, 神奈川沖浪裏。
 ## 环境配置
 根据configs/cv.yml配置环境
 ```bash
