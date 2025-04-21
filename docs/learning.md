@@ -62,6 +62,9 @@ project/
   cv2.destroyAllWindows()
   ```
 * configs 将网络的超参数配置从python文件中分离，放在yaml文件中，后期导入
+  ```bash
+  conda install -c conda-forge pyyaml
+  ```
   写入格式
   ```python
   train:
@@ -155,8 +158,12 @@ project/
      - [x] vgg提取
 2. 初始完成
    - [ ] 完成训练准备
-     - [ ] 记录日志，实验笔记，结果，Tensorboard，权重文件
-     - [ ] 完成损失函数设计
+     - [x] 记录日志
+     - [ ] 实验笔记结果
+     - [x] Tensorboard
+     - [x] 权重文件
+     - [x] 完成损失函数设计
+     - [ ] 可视化处理结果
      - [ ] 完成训练，测试代码
    - [ ] 测试使用
      - [ ] opencv

@@ -1,1 +1,27 @@
 device: auto   # 可选值：auto、cuda、cpu
+experiment: 4
+load: 3
+save: 3
+a: 1 #1 # 三种损失的比例
+b: 100000 #1e5
+c: 1e-7 #5e-6
+style_pic: 'data/udnie.jpg'
+content_layers: ['15']               # relu3_3
+style_layers: ['3', '8', '15', '22']  # relu1_2, relu2_2, relu3_3, relu4_3
+weights_path: 'weights/'
+mean: [0.485, 0.456, 0.406]
+std: [0.229, 0.224, 0.225]
+pic_size: 256
+
+lr: 1e-3            # 学习率  
+epochs: 20          # 迭代次数  
+batch_size: 16
+freq: 50
+train_subset_len: 20000                     
+val_subset_len: 1000                    
+mode: 'train'
+
+cv_mode: 'video'
+video_path: 'data/video/hfut.mp4'
+output_path: 'results/video/output_3.mp4'
+weight_path: 'weights/rtst_3.pth'

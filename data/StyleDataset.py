@@ -1,16 +1,22 @@
 from torchvision import transforms
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset, DataLoader, random_split
 from PIL import Image
 import glob
+from src.utils.cfg import cfg
 
-mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
+# 调用参数，归一化的参数，图片尺寸，当前模式
+mean = cfg['mean']
+std = cfg['std']
+batch_size = cfg['batch_size']
+pic_size = int(cfg['pic_size'])
+mode = cfg['mode']
 
 class StyleDataset(Dataset):
     def __init__(self, root):
-        self.pics = glob.glob(f"{root}/*.jpg")
+        self.pics = glob.glob(f"{root}/*.JPEG")
         self.tf = transforms.Compose([
-            transforms.Resize(512),
-            transforms.CenterCrop(512),
+            transforms.Resize(pic_size),
+            transforms.CenterCrop(pic_size),
             transforms.ToTensor(),
             transforms.Normalize(mean=mean, std=std)
 
@@ -20,6 +26,30 @@ class StyleDataset(Dataset):
         img = Image.open(self.pics[i]).convert('RGB')
         return self.tf(img)
 
-TrainLoader = DataLoader(StyleDataset("data/train"), batch_size=4, shuffle=True, num_workers=4, pin_memory=True)
-ValidateLoader = DataLoader(StyleDataset("data/val"), batch_size=4, shuffle=True, num_workers=4, pin_memory=True)
+train_subset_len = int(cfg['train_subset_len'])
+val_subset_len = int(cfg['val_subset_len'])
+
+# 根据模式确定要加载的数据集
+if mode == 'train':
+    train_full = StyleDataset("data/train")
+    train_ds, _ = random_split(train_full, [train_subset_len, len(train_full)-train_subset_len])
+
+    val_full = StyleDataset("data/val")
+    val_ds, _ = random_split(val_full, [val_subset_len, len(val_full)-val_subset_len])
+
+
+    TrainLoader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
+    ValidateLoader = DataLoader(val_ds, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
+elif mode == 'test':
+    train_full = StyleDataset("data/test")
+    TrainLoader = DataLoader(train_full, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
+    ValidateLoader = None
+elif mode == 'full_train':
+    train_full = StyleDataset("data/train")
+
+    val_full = StyleDataset("data/val")
+
+
+    TrainLoader = DataLoader(train_full, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
+    ValidateLoader = DataLoader(val_full, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
 

@@ -1,10 +1,10 @@
-data/           # 原始/预处理数据  
-weights/        # 模型检查点  
-logs/           # 文本日志  
-tensorboard/    # TB 记录  
-results/        # 实验输出  
-__pycache__/    # Python 缓存  
-*.pyc           # 字节码  
-.vscode/        # 编辑器配置  
-.env            # 环境变量  
+data/           
+weights/       
+logs/           
+tensorboard/    
+results/        
+__pycache__/    
+*.pyc          
+.vscode/       
+.env          
 

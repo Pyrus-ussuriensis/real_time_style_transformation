@@ -46,7 +46,7 @@ class UpsampleConvLayer(nn.Module):
 
     def forward(self, x):
         if self.upsample:
-            F.interpolate(input=x, scale_factor=self.upsample, mode="nearest")
+            x = F.interpolate(input=x, scale_factor=self.upsample, mode="nearest")
         return self.conv(x)
 
 class TransformerNet(nn.Module):
@@ -83,7 +83,8 @@ class TransformerNet(nn.Module):
         y = self.deconv1(y)
         y = self.deconv2(y)
         y = self.deconv3(y)
-        return y
+        #y = x + y
+        return y #torch.tanh(y)
 
 if __name__ == "__main__":
     model = TransformerNet()
