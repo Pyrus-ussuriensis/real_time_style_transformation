@@ -96,7 +96,7 @@ def train(
 
             # 隔50步记录日志，打印图片
             if step % freq == 0:
-                log_fn(epoch=step, loss=LT, mode='train', place='step')
+                #log_fn(epoch=step, loss=LT, mode='train', place='step')
                 global pic_num 
                 #save_pics(inputs, pic_num, "origin")
                 n = save_pics(pic_save, pic_num, "generate")

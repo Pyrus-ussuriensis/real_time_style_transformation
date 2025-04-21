@@ -22,6 +22,6 @@ val_subset_len: 1000
 mode: 'train'
 
 cv_mode: 'video'
-video_path: 'data/video/hfut.mp4'
-output_path: 'results/video/output_3.mp4'
-weight_path: 'weights/rtst_3.pth'
+video_path: 'data/video/4.mp4'
+output_path: 'results/video/output_7.mp4'
+weight_path: 'weights/rtst_ndnie.pth'
