@@ -83,8 +83,7 @@ class TransformerNet(nn.Module):
         y = self.deconv1(y)
         y = self.deconv2(y)
         y = self.deconv3(y)
-        #y = x + y
-        return y #torch.tanh(y)
+        return y 
 
 if __name__ == "__main__":
     model = TransformerNet()
